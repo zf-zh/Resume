@@ -1,0 +1,14 @@
+% Shared appearance for both resumes. Language-specific settings load afterward.
+\usepackage{needspace}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\colorlet{awesome}{awesome-red}
+\setbool{acvSectionColorHighlight}{true}
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+% Use the main document's name in the footer, with its translated document label.
+\makeatletter
+\newcommand{\makeresumeheader}[1]{%
+  \makecvheader[C]%
+  \makecvfooter{\today}{\@firstname\ \@lastname~~~\textperiodcentered~~~#1}{\thepage}%
+}
+\makeatother

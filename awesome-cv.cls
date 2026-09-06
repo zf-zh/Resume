@@ -78,32 +78,36 @@
 % Needed to use icons from font-awesome
 \RequirePackage{fontawesome6}
 \RequirePackage{accsupp}
-\defaultfontfeatures{
-  Renderer=HarfBuzz,
-}
-\setmainfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
+\ifxetex\else
+  \defaultfontfeatures{Renderer=HarfBuzz}
+\fi
+% Load the TeX-distributed font files without requiring OS font registration.
+\setmainfont{SourceSans3}[
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularIt,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldIt,
+  FontFace={l}{n}{Font=*-Light},
+  FontFace={l}{it}{Font=*-LightIt},
 ]
-\setsansfont{Source Sans 3}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
+\setsansfont{SourceSans3}[
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularIt,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldIt,
+  FontFace={l}{n}{Font=*-Light},
+  FontFace={l}{it}{Font=*-LightIt},
 ]
 \newfontfamily\roboto{Roboto}[
-  UprightFont=*,
-  ItalicFont=* Italic,
-  BoldFont=* Bold,
-  BoldItalicFont=* Bold Italic,
-  FontFace={l}{n}{Font=* Light},
-  FontFace={l}{it}{Font=* Light Italic},
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic,
+  FontFace={l}{n}{Font=*-Light},
+  FontFace={l}{it}{Font=*-LightItalic},
 ]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
@@ -531,7 +535,7 @@
   }%
   \begin{minipage}[c]{\headerphotowidth}%
     \ifthenelse{\equal{\@photoalign}{left}}{\raggedright\drawphoto}{}
-  \end{minipage}
+  \end{minipage}%
   \begin{minipage}[c]{\headertextwidth}
     \ifthenelse{\equal{#1}{L}}{\raggedright}{\ifthenelse{\equal{#1}{R}}{\raggedleft}{\centering}}
     \headerfirstnamestyle{\@firstname}\headerlastnamestyle{{}\acvHeaderNameDelim\@lastname}%

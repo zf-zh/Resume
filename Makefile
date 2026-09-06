@@ -1,22 +1,23 @@
-.PHONY: examples
+.DEFAULT_GOAL := all
+.PHONY: all en zh
+.DELETE_ON_ERROR:
 
-CC = lualatex
-EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
-RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+LATEX ?= xelatex
+LATEX_FLAGS ?= -interaction=nonstopmode -halt-on-error -file-line-error
+BUILD_DIR := build
+COMMON_SRCS := awesome-cv.cls $(wildcard shared/*.tex assets/*) Makefile
 
-examples: $(foreach x, coverletter cv resume, $x.pdf)
+all: en zh
 
-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+en: $(BUILD_DIR)/resume-en.pdf
 
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+zh: $(BUILD_DIR)/resume-zh.pdf
 
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+$(BUILD_DIR)/resume-en.pdf: resume/en.tex $(wildcard resume/en/*.tex) $(COMMON_SRCS) | $(BUILD_DIR)
+	$(LATEX) $(LATEX_FLAGS) -output-directory="$(BUILD_DIR)" -jobname=resume-en "$<"
 
-clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+$(BUILD_DIR)/resume-zh.pdf: resume/zh.tex $(wildcard resume/zh/*.tex) $(COMMON_SRCS) | $(BUILD_DIR)
+	$(LATEX) $(LATEX_FLAGS) -output-directory="$(BUILD_DIR)" -jobname=resume-zh "$<"
+
+$(BUILD_DIR):
+	mkdir -p "$@"

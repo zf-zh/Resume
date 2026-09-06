@@ -64,6 +64,10 @@ You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/e
 
 ## Quick Start
 
+For this repository's separate English and Chinese resumes, see the
+[resume editing guide](resume/README.md). Run `make en`, `make zh`, or `make all`
+from the repository root; the PDFs are written to `build/`.
+
 * [**Edit Résumé on OverLeaf.com**](https://www.overleaf.com/latex/templates/awesome-cv/tvmzpvdjfqxp)
 * [**Edit Cover Letter on OverLeaf.com**](https://www.overleaf.com/latex/templates/awesome-cv-cover-letter/pfzzjspkthbk)
 

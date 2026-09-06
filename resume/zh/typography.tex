@@ -1,0 +1,20 @@
+% XeLaTeX Chinese typesetting. Fandol fonts ship with full TeX Live/MacTeX.
+\usepackage{xeCJK}
+\setCJKmainfont{FandolHei-Regular.otf}[
+  BoldFont=FandolHei-Bold.otf,
+  ItalicFont=FandolKai-Regular.otf,
+  FontFace={m}{sc}{Font=FandolHei-Regular.otf},
+  FontFace={l}{n}{Font=FandolHei-Regular.otf},
+  FontFace={l}{it}{Font=FandolKai-Regular.otf}
+]
+\setCJKsansfont{FandolHei-Regular.otf}[
+  BoldFont=FandolHei-Bold.otf,
+  ItalicFont=FandolKai-Regular.otf,
+  FontFace={m}{sc}{Font=FandolHei-Regular.otf},
+  FontFace={l}{n}{Font=FandolHei-Regular.otf},
+  FontFace={l}{it}{Font=FandolKai-Regular.otf}
+]
+
+% Color whole Chinese section headings rather than only the first three characters.
+\renewcommand*{\sectionstyle}[1]{\textcolor{awesome}{\sectionstyleface{#1}}}
+\renewcommand{\today}{\number\year 年\number\month 月\number\day 日}
