@@ -100,15 +100,6 @@
   FontFace={l}{n}{Font=*-Light},
   FontFace={l}{it}{Font=*-LightIt},
 ]
-\newfontfamily\roboto{Roboto}[
-  Extension=.otf,
-  UprightFont=*-Regular,
-  ItalicFont=*-Italic,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldItalic,
-  FontFace={l}{n}{Font=*-Light},
-  FontFace={l}{it}{Font=*-LightItalic},
-]
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
@@ -188,8 +179,8 @@
 %-------------------------------------------------------------------------------
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
-\newcommand*{\headerfont}{\roboto\selectfont}
-\newcommand*{\headerfontlight}{\roboto\fontseries{l}\selectfont}
+\newcommand*{\headerfont}{\sffamily\selectfont}
+\newcommand*{\headerfontlight}{\sffamily\fontseries{l}\selectfont}
 \newcommand*{\footerfont}{\sffamily}
 \newcommand*{\bodyfont}{\sffamily}
 \newcommand*{\bodyfontlight}{\sffamily\fontseries{l}\selectfont}

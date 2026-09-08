@@ -106,9 +106,7 @@ In either case, this should result in the creation of ``{your-cv}.pdf``
 
 [**FontAwesome6 LaTeX Package**](https://github.com/braniii/fontawesome) is a LaTeX package that provides access to the [Font Awesome 6](https://fontawesome.com/v6/icons) icon set.
 
-[**Roboto**](https://github.com/google/roboto) is the default font on Android and ChromeOS, and the recommended font for Google’s visual language, Material Design.
-
-[**Source Sans Pro**](https://github.com/adobe-fonts/source-sans-pro) is a set of OpenType fonts that have been designed to work well in user interface (UI) environments.
+[**Source Sans 3**](https://github.com/adobe-fonts/source-sans) is the font used for English text throughout this template, including the name and contact details.
 
 
 ## Contact

@@ -9,9 +9,11 @@ make all    # both PDFs; running make alone does the same
 ```
 
 The build uses XeLaTeX. A full TeX Live/MacTeX installation provides the LaTeX
-packages, including `fontawesome6`, `xeCJK`, and the Fandol Chinese fonts.
-The shared template loads the Source Sans 3 and Roboto font files supplied by
-TeX Live, without requiring a separate system font installation.
+packages, including `fontawesome6` and `xeCJK`. The Chinese resume requires
+the macOS fonts PingFang SC (regular, light, and semibold) and Kaiti SC.
+The shared template uses Source Sans 3 for English text throughout, including
+the name and contact details. It loads the font files supplied by TeX Live,
+without requiring a separate system font installation for English text.
 
 ## Where to edit
 
